@@ -1,0 +1,29 @@
+
+
+# Build output (includes copied configurations and executable jars)
+**/target/
+**/build/
+*.log
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+
+# Private Spring profiles: keep on this computer only
+**/application-local.yml
+**/application-local.yaml
+**/application-local.properties
+**/application-prod.yml
+**/application-prod.yaml
+**/application-prod.properties
+**/application-secrets.*
+**/application-private.*
+config/private/
+
+# Local credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key

@@ -1,0 +1,126 @@
+<!doctype html>
+<html><body>
+<select class="tri" id="changeHospital">
+                    <option disabled selected hidden>各院區掛號服務</option>
+                            <option value="2" >基隆長庚</option>
+                            <option value="E" >情人湖院區</option>
+                            <option value="1" selected>台北長庚</option>
+                            <option value="B" >長庚診所</option>
+                            <option value="V" >土城醫院</option>
+                            <option value="3" >林口長庚</option>
+                            <option value="5" >桃園長庚</option>
+                            <option value="N" >長青院區（護理之家）</option>
+                            <option value="M" >雲林長庚</option>
+                            <option value="6" >嘉義長庚</option>
+                            <option value="8" >高雄長庚</option>
+                            <option value="T" >鳳山醫院</option>
+                </select>
+<div class="container tab-pane" id="progress-tab-1">
+            <form class="progress__controller pt32 pb32 pr40 pl40" action="/Progress/1" method="get">
+                <div class="row f15">
+                    <span class="wide10 mr16">選擇掛號科別</span>
+                    <div class="wrapper select">
+                        <select class="std tri" name="dept">
+                                        <option value="00" selected>COVID-19服務</option>
+                                        <option value="01" >類流感門診</option>
+                                        <option value="02" >內科</option>
+                                        <option value="03" >外科</option>
+                                        <option value="04" >牙科</option>
+                                        <option value="05" >婦產科</option>
+                                        <option value="06" >兒童專科</option>
+                                        <option value="07" >其它專科</option>
+                                        <option value="08" >中醫</option>
+                                        <option value="09" >聯合門診</option>
+                                        <option value="13" >自費門診</option>
+                                        <option value="15" >老人健康檢查</option>
+                                        <option value="16" >預防保健</option>
+                                        <option value="98" >春節門診</option>
+                                        <option value="99" >測試區</option>
+                        </select>
+                    </div>
+                    <div class="wrapper select">
+                        <select class="std tri" name="time">
+                            <option value="1" selected>上午診</option>
+                            <option value="2" >下午診</option>
+                            <option value="3" >晚間</option>
+                        </select>
+                    </div>
+                    <button class="f18" type="submit">送出查詢</button>
+                </div>
+            </form>
+            <div class="md-noPadding pr24 pl24">
+                <div class="mt48 pt32" style="border-top: 1px solid #dfdfdf; color: #555">
+                    <div class="row f18 lh20 mb12 mt4 table-title"><span class="mr48">看診進度查詢結果</span><span>2026/10/19 PM 06:06:43</span></div>
+                    <table class="table wide10 two-tone five-type">
+                        <thead>
+                            <tr>
+                                <th>掛號科別 </th>
+                                <th>看診位置 </th>
+                                <th>醫師名 </th>
+                                <th>目前看診號碼 </th>
+                                <th>下一個看診號碼 </th>
+                                <th>下二個看診號碼 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                        <tr>
+                                            <td data-title="掛號科別">中醫內兒科</td>
+                                            <td class="fool" data-title="看診位置">
+                                                <div>環亞門診部9樓／南京東路三段337號(微風南京)  </div>
+                                            </td>
+                                            <td data-title="醫師名">吳宜鴻</td>
+                                            <td class="f20 orange" data-title="目前看診號碼"> </td>
+                                            <td class="f20 orange" data-title="下一個看診號碼">過號 78 </td>
+                                            <td class="f20 orange" data-title="下二個看診號碼">過號 78 </td>
+                                        </tr>
+                                        <tr>
+                                            <td data-title="掛號科別">中醫內兒科</td>
+                                            <td class="fool" data-title="看診位置">
+                                                <div>環亞門診部9樓／南京東路三段337號(微風南京)  </div>
+                                            </td>
+                                            <td data-title="醫師名">王品涵</td>
+                                            <td class="f20 orange" data-title="目前看診號碼"> </td>
+                                            <td class="f20 orange" data-title="下一個看診號碼">37 </td>
+                                            <td class="f20 orange" data-title="下二個看診號碼">37 </td>
+                                        </tr>
+                                        <tr>
+                                            <td data-title="掛號科別">中醫內兒科</td>
+                                            <td class="fool" data-title="看診位置">
+                                                <div>環亞門診部9樓／南京東路三段337號(微風南京)  </div>
+                                            </td>
+                                            <td data-title="醫師名">楊宗憲</td>
+                                            <td class="f20 orange" data-title="目前看診號碼"> </td>
+                                            <td class="f20 orange" data-title="下一個看診號碼">過號 4 </td>
+                                            <td class="f20 orange" data-title="下二個看診號碼">過號 4 </td>
+                                        </tr>
+                                        <tr>
+                                            <td data-title="掛號科別">中醫針傷科</td>
+                                            <td class="fool" data-title="看診位置">
+                                                <div>環亞門診部9樓／南京東路三段337號(微風南京)  </div>
+                                            </td>
+                                            <td data-title="醫師名">許中原</td>
+                                            <td class="f20 orange" data-title="目前看診號碼"> </td>
+                                            <td class="f20 orange" data-title="下一個看診號碼">過號 23 </td>
+                                            <td class="f20 orange" data-title="下二個看診號碼">過號 23 </td>
+                                        </tr>
+                                        <tr>
+                                            <td data-title="掛號科別">中醫針傷科</td>
+                                            <td class="fool" data-title="看診位置">
+                                                <div>環亞門診部9樓／南京東路三段337號(微風南京)  </div>
+                                            </td>
+                                            <td data-title="醫師名">鄭淑臻</td>
+                                            <td class="f20 orange" data-title="目前看診號碼"> </td>
+                                            <td class="f20 orange" data-title="下一個看診號碼">50 </td>
+                                            <td class="f20 orange" data-title="下二個看診號碼">50 </td>
+                                        </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+</body></html>

@@ -44,3 +44,21 @@ currentNumber/nextNumber/followingNumber 保留字串（例如「過號 78」或
 每分鐘自動更新可關閉；分頁在背景時暫停更新。更換條件會清除舊結果，按查詢後顯示新結果。
 網址會保存本次查詢條件，可直接分享或重新開啟。空白號碼顯示「尚未提供」，過號文字保留。
 新增 GET /api/hospitals/cgmh/{hospitalCode}/departments，院區科別從官方頁面讀取，快取一小時。
+
+## 私密設定與公開 GitHub
+
+`application-local.yml`、`application-prod.yml`、`.env*`、IDE 設定與所有 `target/` 已加入 .gitignore。
+既有私密設定保留在本機，不應提交；可公開的 worker `application.yml` 使用環境變數，沒有實際資料庫帳密。
+啟動 worker 前，在同一個 PowerShell 視窗設定自己的值：
+
+```powershell
+$env:DB_URL = 'jdbc:mysql://localhost:3306/wait_no_more'
+$env:DB_USERNAME = 'your-user'
+$env:DB_PASSWORD = 'your-password'
+java -jar wait-no-more-worker/target/wait-no-more-worker-1.0-SNAPSHOT.jar
+```
+
+上面的值只是示例，真實值不要寫進 README 或其他程式碼。Spring Boot 不會自動載入 .env。
+長庚查詢 API 與網頁不使用資料庫，因此啟動 api 不需要設定這些變數。
+本機若選用 local/prod profile，仍會使用原有私密設定；建置出的 JAR 可能包含該設定，勿公開上傳。
+若帳密曾進入公開提交，即使之後忽略或刪除檔案，仍應更換該帳密。

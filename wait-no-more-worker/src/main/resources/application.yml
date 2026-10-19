@@ -1,0 +1,14 @@
+# Public configuration: real credentials are supplied at runtime.
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/wait_no_more?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Taipei}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+custom:
+  gov: # 健保署公開資料集 URL 配置
+    csv-urls:
+      medical_center: https://info.nhi.gov.tw/api/iode0000s01/Dataset?rId=A21030000I-D21001-003
+      hospital_regional: https://info.nhi.gov.tw/api/iode0000s01/Dataset?rId=A21030000I-D21002-005
+      hospital_local: https://info.nhi.gov.tw/api/iode0000s01/Dataset?rId=A21030000I-D21003-003
+      clinic: https://info.nhi.gov.tw/api/iode0000s01/Dataset?rId=A21030000I-D21004-009

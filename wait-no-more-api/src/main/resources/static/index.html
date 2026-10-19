@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="選擇長庚院區、科別與時段，查詢門診即時叫號進度。">
+  <title>長庚即時叫號 · Wait No More</title>
+  <link rel="stylesheet" href="/app.css"><script src="/app.js" defer></script>
+</head>
+<body>
+<header class="topbar"><div class="brand"><span class="brand-icon" aria-hidden="true">＋</span> Wait No More <span class="brand-note">候診進度查詢</span></div><span class="local-tag">長庚醫療體系</span></header>
+<main>
+  <section class="intro"><span class="eyebrow">CLINIC PROGRESS</span><h1>少一點等待，<br class="mobile-break">多一點從容。</h1><p>選擇院區、科別與時段，掌握目前的門診叫號。</p></section>
+  <section class="search-panel" aria-label="查詢條件">
+    <form id="search-form">
+      <div class="field"><label for="hospital">長庚院區</label><select id="hospital" name="hospital" required disabled><option>載入院區中…</option></select></div>
+      <div class="field"><label for="department">科別</label><select id="department" name="department" required disabled><option>載入科別中…</option></select></div>
+      <div class="field"><label for="session">看診時段</label><select id="session" name="session"><option value="1">上午診</option><option value="2">下午診</option><option value="3">晚間診</option></select></div>
+      <button class="primary" id="search-button" type="submit" disabled><span aria-hidden="true">⌕</span> 查詢叫號</button>
+    </form>
+    <div class="panel-foot"><span>資料取自長庚官方看診進度</span><label class="switch-label"><input type="checkbox" id="auto-refresh" checked><span>每分鐘自動更新</span></label></div>
+  </section>
+  <div id="message" class="message" role="status" hidden></div>
+  <section class="results" aria-labelledby="results-title" aria-busy="false">
+    <div class="results-heading"><div><div class="title-line"><h2 id="results-title">門診叫號進度</h2><span id="status" class="status">準備查詢</span></div><p id="query-summary">正在載入查詢條件…</p></div><button type="button" id="refresh-button" class="secondary" disabled>↻ 重新整理</button></div>
+    <div class="update-row"><span id="source-time">院方資料時間 —</span><span id="countdown">每分鐘自動更新</span></div>
+    <div id="results" class="clinic-grid" aria-live="polite"><div class="empty"><div class="empty-icon" aria-hidden="true">＋</div><h3>準備為你查詢</h3><p>選好條件，即可查看診間叫號進度。</p></div></div>
+    <p id="fetched-time" class="fetched-time"></p>
+  </section>
+  <footer><p>叫號可能因過號、插診或診療狀況變動，實際看診順序請以現場為準。</p><a id="official-link" href="https://register.cgmh.org.tw/Progress/1" target="_blank" rel="noopener noreferrer">前往長庚官方查詢 ↗</a><span class="footer-brand">WAIT NO MORE</span></footer>
+</main>
+<template id="clinic-template"><article class="clinic-card"><div class="card-top"><span class="department-name"></span><span class="card-label">目前看診號碼</span></div><div class="doctor-name"></div><div class="current-number"></div><div class="next-numbers"><div><span>下一個號碼</span><strong class="next-number"></strong></div><div><span>下二個號碼</span><strong class="following-number"></strong></div></div><div class="location"></div></article></template>
+</body></html>
