@@ -2,6 +2,12 @@
 
 Java 21 / Spring Boot 3.2.3。範圍為院所基本資料與公開看診進度；已移除交通站點匯入。
 
+## 介面預覽
+
+選擇長庚院區、科別與看診時段，查看診間、醫師及叫號進度，支援手動重新整理與每分鐘自動更新。
+
+![Wait No More 長庚即時叫號查詢畫面](docs/images/clinic-progress.png)
+
 ## 啟動公開查詢 API
 
 ```powershell
